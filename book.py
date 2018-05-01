@@ -36,7 +36,7 @@ print freqWord("of")
 
 def mostFreqWord():
     uniqueWords = set(listWords) #all the unique words
-    red = [freqWord(x) for x in uniqueWords] #list of counts for each word
+    red = [(freqWord(x), x) for x in uniqueWords] #list of counts for each word
     return reduce( (lambda x,y: max(x,y) ), red) #reduce to the max entry
 
 print mostFreqWord()
