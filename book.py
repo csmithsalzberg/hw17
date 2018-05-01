@@ -9,6 +9,9 @@ from functools import reduce
 allWords = open("hollow.txt", "r")
 plainWords = allWords.read()
 listWords = plainWords.split()
+#strip
+listWords = [x.lower().strip(".?!") for x in listWords]
+#print listWords
 
 def freqPhrase(phrase):
     possibleStr = [plainWords[x:x+len(phrase)] for x in range(len(plainWords)-len(phrase))] #list of all substrings with the desired length
